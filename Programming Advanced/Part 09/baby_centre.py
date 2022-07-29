@@ -1,4 +1,3 @@
-
 # WRITE YOUR SOLUTION HERE:
 # Note! Do not change the class Person!
 
@@ -9,63 +8,38 @@ class Person:
         self.height = height
         self.weight = weight
 
-
 class BabyCentre:
     def __init__(self):
         self.number_of_weigh_ins = 0
 
     def weigh(self, person: Person):
         # return the weight of the person passed as an argument
-        return -1
+        self.number_of_weigh_ins += 1
+        return person.weight
 
-#
+    def feed(self,person: Person):
+        # increse the weight of ther person by one
+        person.weight +=  1
 
+    def weigh_ins(self):
+        return self.number_of_weigh_ins
 
-class Product:
-    def __init__(self, name: str, unit: int):
-        self.name = name
-        self.unit = unit
+if __name__ == "__main__":
+    baby_centre = BabyCentre()
 
+    eric = Person("Eric", 1, 110, 7)
+    peter = Person("Peter", 33, 176, 85)
 
-shopping_cart = []
-milk = Product("Milk", "litre")
-egg = Product("Egg", 12)
-shopping_cart.append(milk)
-shopping_cart.append(milk)
-shopping_cart.append(egg)
-for item in shopping_cart:
-    print(item.name, item.unit)
+    print(f"Total number of weigh-ins is {baby_centre.weigh_ins()}")
 
-class Dog:
-    def __init__(self, name):
-        self.name = name
+    baby_centre.weigh(eric)
+    baby_centre.weigh(eric)
 
-    def __str__(self) -> str:
-        return self.name
+    print(f"Total number of weigh-ins is {baby_centre.weigh_ins()}")
 
+    baby_centre.weigh(eric)
+    baby_centre.weigh(eric)
+    baby_centre.weigh(eric)
+    baby_centre.weigh(eric)
 
-dog_gang = []
-dog1 = Dog("Rex")
-dog_gang.append(dog1)
-dog_gang.append(dog1)
-dog_gang.append(Dog("Rex"))
-dog_gang.append(Dog("Rqw"))
-
-for dog in dog_gang:
-    print(dog)
-print("update index-0:")
-dog_gang[0].name = "xeR"
-for dog in dog_gang:
-    print(dog)
-print("change index 1:")
-dog_gang[2].name = "Tux"
-for dog in dog_gang:
-    print(dog)
-
-l1 = [1,2,3]
-l2 = [1,2,3]
-l3 = l1
-
-print(l1 is l2)
-print(l2 is l3)
-print(l3 is l1)
+    print(f"Total number of weigh-ins is {baby_centre.weigh_ins()}")
