@@ -23,7 +23,7 @@ class BabyCentre:
 
     def weigh_ins(self):
         return self.number_of_weigh_ins
-
+# Test case
 if __name__ == "__main__":
     baby_centre = BabyCentre()
 
